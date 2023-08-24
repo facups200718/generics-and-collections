@@ -4,10 +4,14 @@ import java.util.*;
 
 public class MyArrayList {
     public static void main(String[] args) {
-
+        List list = asList(new String[]{"1", "2", "3"});
+        Iterator iterator = list.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
     public static <X> List<X> asList(X[] b) {
-        return new MyOwnArrayList<X>(b);
+        return new MyOwnArrayList<>(b);
     }
     private static final class MyOwnArrayList<X> extends AbstractList<X> {
         private final X[] b;
